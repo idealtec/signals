@@ -10,6 +10,6 @@ import { Bert } from 'meteor/themeteorchef:bert';
 
 Template.App_home.onCreated(function helloOnCreated() {
   // counter starts at 0
-  Bert.alert( 'Welcome to Signals App', 'success', 'growl-top-right' );
+  Bert.alert( 'Welcome to Signals App', 'success', 'growl-top-right','fa-smile-o' );
 });
 

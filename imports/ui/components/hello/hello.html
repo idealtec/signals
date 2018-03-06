@@ -1,10 +1,8 @@
 <template name="hello">
-  <button class='button is-primary is-medium'>Click Me</button>
-
   <div class="card">
     <div class="card-content">
       <p class="title">
-        Press the button and see how many times you did it ?
+        <button class='button is-rounded is-dark is-large is-outlined '>Click Me</button> and see how many times you did it ?
       </p>
 
     </div>
@@ -16,7 +14,7 @@
       </p>
       <p class=" is-danger card-footer-item">
         <span>
-          {{counter}} times
+          <span id='span_count' class='title'>{{counter}}</span> times
         </span>
       </p>
     </footer>
