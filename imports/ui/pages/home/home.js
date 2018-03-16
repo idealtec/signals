@@ -5,6 +5,9 @@ import '../../components/info/info.js';
 import '../../components/nav';
 import '../../components/footer';
 import '../../components/panel';
+import '../../components/broadcasts';
+import '../broadcasts';
+
 import {Template} from 'meteor/templating';
 import { Bert } from 'meteor/themeteorchef:bert'; 
 
