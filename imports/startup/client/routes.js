@@ -28,6 +28,15 @@ FlowRouter.route('/broadcasts', {
     });
   },
 });
+FlowRouter.route('/history', {
+  name: 'App.broadcasts',
+  action() {
+    BlazeLayout.render('App_body', { 
+      main: 'App_home',
+      tbroadcast: 'panel' 
+    });
+  },
+});
 
 FlowRouter.notFound = {
   action() {
