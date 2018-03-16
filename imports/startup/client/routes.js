@@ -5,7 +5,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import '../../ui/layouts/body/body.js';
 import '../../ui/pages/home/home.js';
 import '../../ui/pages/not-found/not-found.js';
-import '../../ui/pages/broadcasts';
+import '../../ui/pages/basecontent';
 
 // Set up all routes in the app
 FlowRouter.route('/', {
@@ -24,7 +24,7 @@ FlowRouter.route('/broadcasts', {
     // BlazeLayout.render('dy_boradcast', { tbroadcast: 'broadcastp' });
     BlazeLayout.render('App_body', { 
       main: 'App_home',
-      tbroadcast: 'broadcastp' 
+      basecontentTemplate: 'broadcast' 
     });
   },
 });
@@ -33,7 +33,7 @@ FlowRouter.route('/history', {
   action() {
     BlazeLayout.render('App_body', { 
       main: 'App_home',
-      tbroadcast: 'panel' 
+      basecontentTemplate: 'panel' 
     });
   },
 });

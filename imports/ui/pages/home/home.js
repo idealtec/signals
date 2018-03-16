@@ -6,7 +6,7 @@ import '../../components/nav';
 import '../../components/footer';
 import '../../components/panel';
 import '../../components/broadcasts';
-import '../broadcasts';
+import '../basecontent';
 
 import {Template} from 'meteor/templating';
 import { Bert } from 'meteor/themeteorchef:bert'; 

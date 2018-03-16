@@ -1,0 +1,2 @@
+import './basecontent.html';
+
