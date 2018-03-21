@@ -6,6 +6,7 @@ import '../../components/nav';
 import '../../components/footer';
 import '../../components/panel';
 import '../../components/broadcasts';
+import '../../components/chart';
 import '../basecontent';
 
 import {Template} from 'meteor/templating';
