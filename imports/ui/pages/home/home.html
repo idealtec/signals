@@ -1,8 +1,14 @@
 <template name="App_home">
-  {{> nav }}
   <!-- {{> hello}} -->
   <!-- {{> info}} -->
   <!-- {{> panel}} -->
+
+  {{#if currentUser}}
+  {{> nav }}
   {{> basecontent}}
+  
+  {{else}}
+    {{> authenticate}}
+  {{/if}}
   {{> footer}}
 </template>

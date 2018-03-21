@@ -20,7 +20,6 @@
           <div class="navbar-start">
             <a class="navbar-item" href="#/">
               Home <i class="icon fa fa-home is-right" aria-hidden="true"></i>
-              {{> loginButtons}}
             </a>
             <a class="navbar-item" href="broadcasts">
               Broadcasts <i class="fa fa-bullhorn is-right" aria-hidden="true"></i>
@@ -69,8 +68,8 @@
           <div class="navbar-end">
 
               {{#if currentUser}}
-              <a class="navbar-item" href="#/">
-                Welcome  {{currentUser.profile.name}}
+              <a class="navbar-item logout" href="#">
+                Logout  {{currentUser.profile.name}}
               </a>
               {{/if}}
 

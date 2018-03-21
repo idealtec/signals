@@ -8,6 +8,7 @@ import '../../components/panel';
 import '../../components/broadcasts';
 import '../../components/chart';
 import '../basecontent';
+import '../authenticate';
 
 import {Template} from 'meteor/templating';
 import { Bert } from 'meteor/themeteorchef:bert'; 

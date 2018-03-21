@@ -1,0 +1,49 @@
+<template name="authenticate">
+
+
+    <article class="message is-primary">
+        <div class="message-header">
+            <p>Welcome to signals</p>
+        </div>
+        <div class="message-body">
+            Please login using your google account or use your login credentials provided to look at the basic interface </div>
+    </article>
+
+
+
+    <div class="panel">
+        <div class="panel-heading">
+            Login
+        </div>
+
+        <div class="panel-block">
+            <p class="control has-icon">
+                <input class="input is-expanded" type="email" placeholder="E-mail Address" name="email" autofocus>
+                <span class="icon is-small">
+                    <i class="fa fa-envelope"></i>
+                </span>
+            </p>
+        </div>
+
+        <div class="panel-block">
+            <p class="control has-icon">
+                <input class="input is-expanded" type="password" placeholder="Password" name="password">
+                <span class="icon is-small">
+                    <i class="fa fa-lock"></i>
+                </span>
+            </p>
+        </div>
+        <div class="panel-block">
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-success">Login</button>
+                </div>
+                <div class="control">
+                    {{> loginButtons}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</template>
