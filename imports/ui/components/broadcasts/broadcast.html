@@ -81,4 +81,25 @@
             </article>
         </div>
     </div>
+
+    <table class="table is-bordered is-striped is-narrow is-hoverable ">
+        <thead>
+          <tr>
+            <th><abbr title="Title of the boradcast">Title</abbr></th>
+            <th>Body</th>
+            <th><abbr title="Owner">Owner</abbr></th>
+            <th><abbr title="created">Created At</abbr></th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each broadcasts}}
+        <tr>
+            <th>{{title}}</th>
+            <td>{{body}}</td>
+            <td>{{owner}}</td>
+            <td>{{ dateyeartime createdAt}}</td>
+          </tr>
+        {{/each}}
+        </tbody>
+        </table>
 </template>
