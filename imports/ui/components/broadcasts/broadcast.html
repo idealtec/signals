@@ -24,7 +24,7 @@
                         <div class="message-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus
-                            ac ex sit amet fringilla. 
+                            ac ex sit amet fringilla.
                         </div>
                     </article>
                 </div>
@@ -75,31 +75,38 @@
                     amet fringilla. Nullam gravida purus diam, et dictum
                     <a>felis venenatis</a> efficitur. Aenean ac
                     <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor
-                    ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore porro saepe quae quod quia, ullam officia consequatur doloribus repellat aperiam sunt suscipit nulla non at sed? Vel sed eligendi possimus.
+                    ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem. Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Labore porro saepe quae quod quia, ullam officia consequatur
+                    doloribus repellat aperiam sunt suscipit nulla non at sed? Vel sed eligendi possimus.
                 </div>
             </article>
         </div>
     </div>
-
+    {{> broadcast_add}}
     <table class="table is-bordered is-striped is-narrow is-hoverable ">
         <thead>
-          <tr>
-            <th><abbr title="Title of the boradcast">Title</abbr></th>
-            <th>Body</th>
-            <th><abbr title="Owner">Owner</abbr></th>
-            <th><abbr title="created">Created At</abbr></th>
-          </tr>
+            <tr>
+                <th>
+                    <abbr title="Title of the boradcast">Title</abbr>
+                </th>
+                <th>Body</th>
+                <th> Owner </th>
+                <th> Created At </th>
+                <th> Action </th>
+            </tr>
         </thead>
         <tbody>
-        {{#each broadcasts}}
-        <tr>
-            <th>{{title}}</th>
-            <td>{{body}}</td>
-            <td>{{owner}}</td>
-            <td>{{ dateyeartime createdAt}}</td>
-          </tr>
-        {{/each}}
+            {{#each broadcasts}}
+            <tr>
+                <th>{{title}}</th>
+                <td>{{body}}</td>
+                <td>{{owner}}</td>
+                <td>{{ dateyeartime createdAt}}</td>
+                <td>
+                    <button class="delete"></button>
+                </td>
+            </tr>
+            {{/each}}
         </tbody>
-        </table>
+    </table>
 </template>

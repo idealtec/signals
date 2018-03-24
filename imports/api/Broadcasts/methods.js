@@ -9,11 +9,9 @@ Meteor.methods({
       title: String,
       body: String,
     });
-
     try {
-        const myUser = 'faker';
-        if(this.userId) myUser = this.userId;
-      return Broadcasts.insert({ owner: myUser, ...doc });
+
+      return Broadcasts.insert({ owner: this.userId, ...doc });
     } catch (exception) {
       handleMethodException(exception);
     }
