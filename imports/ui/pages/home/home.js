@@ -6,6 +6,7 @@ import '../../components/nav';
 import '../../components/footer';
 import '../../components/panel';
 import '../../components/broadcasts';
+import '../../components/subscribers';
 import '../../components/chart';
 import '../basecontent';
 import '../authenticate';

@@ -1,14 +1,23 @@
 <template name="broadcast_add">
+
+  <div class="box content">
+
     <form id='#addbroadcast' action="">
-    <div class="field has-addons is-grouped">
+
+      <div class="field">
         <div class="control">
-            <textarea class="textarea" id='broadcast_body' placeholder="Post a signal"></textarea>
-        </div>
-        <div class="control add-broadcast">
-          <a class="button is-primary" type="submit">
-            Post
-          </a>
+          <input type='text' class="input is-info is-rounded" id='broadcast_title' placeholder="Title">
         </div>
       </div>
-      </form>
+      <div class="control">
+        <textarea class="textarea is-info is-rounded" id='broadcast_body' placeholder="Post a signal"></textarea>
+      </div>
+      <div class="control add-broadcast">
+        <a class="button is-info is-rounded is-fullwidth" type="submit">
+          Post
+        </a>
+      </div>
+    </form>
+  </div>
+
 </template>

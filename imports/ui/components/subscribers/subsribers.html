@@ -1,0 +1,23 @@
+<template name="subscribers">
+ <div class="title is-primary">Subsribers</div>
+    {{> subscriber_add}}
+    <table class="table is-bordered is-striped is-narrow is-hoverable ">
+        <thead>
+            <tr>
+                <th>Phone</th>
+                <th> Email </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each subscribers}}
+            <tr>
+                <th>{{phone}}</th>
+                <td>{{email}}</td>
+                <td>
+                    <button class="delete"></button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</template>

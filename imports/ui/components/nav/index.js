@@ -13,10 +13,9 @@ Template.nav.events({
   //   Bert.alert( 'We working on navbar!', 'info', 'growl-bottom-right', 'fa-bell' );
 
   // },
-  // 'click .logout'(event, instance) {
-  //   // This is used to toggle the hamburger menu for mobile
-  //   Bert.alert( 'Logging out', 'info', 'growl-bottom-right', 'fa-user' );
-  //   Meteor.logout();
 
-  // },
+  'click .logout'(event, instance) {
+    Meteor.logout();
+
+  },
 });

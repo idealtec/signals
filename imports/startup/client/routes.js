@@ -46,6 +46,15 @@ FlowRouter.route('/charts', {
     });
   },
 });
+FlowRouter.route('/subscribers', {
+  name: 'App.charts',
+  action() {
+    BlazeLayout.render('App_body', { 
+      main: 'App_home',
+      basecontentTemplate: 'subscribers' 
+    });
+  },
+});
 
 FlowRouter.notFound = {
   action() {

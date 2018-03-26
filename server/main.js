@@ -11,20 +11,20 @@ import  Broadcasts from '../imports/api/Broadcasts/Broadcasts.js';
 Meteor.startup(() => {
 
     console.log('Starting Signals');
-  const numberBroadcasts = Broadcasts.find({}).count();
-  console.log(numberBroadcasts);
-  if (!numberBroadcasts) {
-    _.times(20, () => {
-      const title = faker.lorem.sentence();
-      const body = faker.lorem.paragraph();
-      const owner = 'faker';
+  // const numberBroadcasts = Broadcasts.find({}).count();
+  // console.log(numberBroadcasts);
+  // if (!numberBroadcasts) {
+  //   _.times(20, () => {
+  //     const title = faker.lorem.sentence();
+  //     const body = faker.lorem.paragraph();
+  //     const owner = 'faker';
 
-      Meteor.call('broadcasts.insert', {
-        title,
-        body,
-      });
-    });
-  }
+  //     Meteor.call('broadcasts.insert', {
+  //       title,
+  //       body,
+  //     });
+  //   });
+  // }
 
 
 });
