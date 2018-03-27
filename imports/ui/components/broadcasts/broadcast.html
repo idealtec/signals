@@ -1,14 +1,13 @@
 <template name="broadcast">
 
 
-    <div class="tile is-ancestor">
+    <!-- <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
             <div class="tile">
                 <div class="tile is-parent is-vertical">
                     <article class="message is-success is-child">
                         <div class="message-header">
                             <p>Broadcasted: 01/15/2018</p>
-                            <!-- <button class="delete" aria-label="delete"></button> -->
                         </div>
                         <div class="message-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -19,7 +18,6 @@
                     <article class="message is-warning is-child">
                         <div class="message-header">
                             <p>Broadcasted: 02/15/2018</p>
-                            <!-- <button class="delete" aria-label="delete"></button> -->
                         </div>
                         <div class="message-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -32,7 +30,6 @@
                     <article class="message is-warning is-child">
                         <div class="message-header">
                             <p>Broadcasted: {{dateyeartime '03/15/2018'}}</p>
-                            <!-- <button class="delete" aria-label="delete"></button> -->
                         </div>
                         <div class="message-body">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -50,7 +47,6 @@
                 <article class="message is-primary">
                     <div class="message-header">
                         <p>Broadcasted: {{moment '02/10/2018'}}</p>
-                        <!-- <button class="delete" aria-label="delete"></button> -->
                     </div>
                     <div class="message-body">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -81,9 +77,9 @@
                 </div>
             </article>
         </div>
-    </div>
-    {{> broadcast_add}}
-    <table class="table is-bordered is-striped is-narrow is-hoverable ">
+    </div> -->
+    
+    <!-- <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth ">
         <thead>
             <tr>
                 <th>
@@ -108,5 +104,40 @@
             </tr>
             {{/each}}
         </tbody>
-    </table>
+    </table> -->
+
+    {{> broadcast_add}}
+    {{#each broadcasts}}
+    <div class="box content">
+
+        <article class="post">
+            <h4>{{title}}: {{body}}</h4>
+            <div class="media">
+                <div class="media-left">
+                    <p class="image is-32x32">
+                        <img src="https://placeimg.com/128/128/people">
+                    </p>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <a href="#">{{owner}}</a> posted this signal {{ moment createdAt}} &nbsp;
+                            {{#unless @index 0}}
+                                <span class="tag is-primary ">New</span> 
+                            {{/unless}}
+                        </p>
+                    </div>
+                </div>
+                <div class="media-right">
+                    <span class="has-text-grey-light">
+                        <i class="fa fa-comments"></i> 1</span>
+                </div>
+            </div>
+            
+        </article>
+    </div>
+    {{/each}}
+
+
+
 </template>

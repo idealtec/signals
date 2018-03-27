@@ -4,7 +4,7 @@ import Broadcasts from '../Broadcasts';
 
 Meteor.publish('broadcasts', function broadcasts() {
   // return Broadcasts.find({ owner: 'faker' });
-  return Broadcasts.find({ owner: this.userId });
+  return Broadcasts.find({ owner: this.userId }, {sort: {updatedAt: -1}});
 });
 
 // Note: broadcasts.view is also used when editing an existing document.
