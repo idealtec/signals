@@ -4,6 +4,7 @@ import Chart from "chart.js";
 
 Template.chart.onRendered(function() {
   var ctx = document.getElementById("myChart").getContext("2d");
+  this.autorun(() => {
   var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: "line",
@@ -32,5 +33,6 @@ Template.chart.onRendered(function() {
     // Configuration options go here
     options: {}
   });
+});
 });
 

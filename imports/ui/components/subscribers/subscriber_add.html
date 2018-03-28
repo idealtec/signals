@@ -1,23 +1,47 @@
 <template name="subscriber_add">
-    <form id='#addbroadcast' action="">
-        <div class="field has-addons is-grouped">
-            
-            <div class="field">
-                <div class="control">
-                  <input type='tel' class="input is-primary is-rounded" id='subscriber_phone' placeholder="Mobile">
-                </div>
-              </div>
-            <div class="field">
-                <div class="control">
-                  <input type='email' class="input is-primary is-rounded" id='subscriber_email' placeholder="Email">
-                </div>
-              </div>
+  <div class="box content">
 
-            <div class="control add-subscriber">
-              <a class="button is-primary is-rounded" type="submit">
-                Post
-              </a>
-            </div>
+    <form id='#addSubscriber' action="">
+
+        <div class="field">
+          <div class="control">
+            <input type='text' class="input is-warning is-rounded" id='subscriber_username' placeholder="Choose Username">
           </div>
-          </form>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input type='tel' class="input is-warning is-rounded" id='subscriber_phone' placeholder="Mobile">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input type='email' class="input is-warning is-rounded" id='subscriber_email' placeholder="Email">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <!-- <input type='text' class="input is-warning is-rounded" id='subscriber_channel' placeholder="Channel"> -->
+            <div class="select  is-rounded is-warning is-fullwidth" id='subscriber_channel' placeholder="Channel">
+                <select >
+                <!-- <select multiple size="8"> -->
+                  <option value="All">Select Channel</option>
+                  {{#each channels}}
+                  <option value="{{description}}">{{name}}</option>
+                  {{/each}}
+                </select>
+              </div>
+          </div>
+        </div>
+
+        <div class="control add-subscriber">
+          <a class="button is-warning is-rounded is-fullwidth" type="submit">
+            Register Subscriber
+          </a>
+        </div>
+    </form>
+  </div>
+
+
+
 </template>

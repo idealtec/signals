@@ -5,14 +5,21 @@ import { Template } from "meteor/templating";
 import { Bert } from "meteor/themeteorchef:bert";
 import { timeago, monthDayYearAtTime } from "../../../modules/dates";
 import Subscribers from "../../../api/Subscribers/Subscribers.js";
+import Channels from "../../../api/Channels/Channels.js";
 
 Template.subscribers.onCreated(function helloOnCreated() {
 
   // console.log('Testing' ,timeago('02/10/2018'));
   Meteor.subscribe("subscribers");
+  Meteor.subscribe("channels");
   //  Meteor.subscribe('subscribers.view');
 });
 
+Template.subscriber_add.helpers({
+  channels() {
+    return Channels.find({});
+  },
+});
 Template.subscribers.helpers({
   moment(date) {
     return timeago(date);
@@ -22,7 +29,8 @@ Template.subscribers.helpers({
   },
   subscribers() {
     return Subscribers.find({});
-  }
+  },
+
 });
 
 Template.subscribers.events({
@@ -49,10 +57,15 @@ Template.subscriber_add.events({
     event.preventDefault();
     const subscriber_phone = $("#subscriber_phone").val();
     const subscriber_email = $("#subscriber_email").val();
+    const subscriber_username = $("#subscriber_username").val();
+    const subscriber_channel = $("#subscriber_channel option:selected" ).text();
 
+    console.log('Channel',subscriber_channel);
     const doc = {
       phone: subscriber_phone,
-      email: subscriber_email
+      email: subscriber_email,
+      channel: subscriber_channel,
+      username: subscriber_username,
     };
 
     Meteor.call("subscribers.insert", doc, error => {
@@ -61,6 +74,8 @@ Template.subscriber_add.events({
       } else {
         $("#subscriber_phone").val("");
         $("#subscriber_email").val("");
+        $("#subscriber_username").val("");
+        $("#subscriber_channel").val("");
       }
     });
   }

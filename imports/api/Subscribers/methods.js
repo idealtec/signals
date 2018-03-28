@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import Subscribers from './Subscribers';
+import Channels from '../Channels/Channels.js';
+import  '../Channels/methods';
 import handleMethodException from '../../modules/handle-method-exception';
 
 Meteor.methods({
@@ -8,11 +10,26 @@ Meteor.methods({
     check(doc, {
       phone: String,
       email: String,
+      username: String,
+      channel: String,
     });
     try {
+      console.log(' Before channeling',doc.channel);
+     
 
+      let channelExists = Channels.find({ name: doc.channel }).fetch();
+      if(!channelExists){
+        let channelDoc = {
+          name: doc.channel,
+          description: doc.channel+ 'Description',
+        };
+        let channelId = Channels.insert({owner: this.userId, ...channelDoc});
+        console.log('Created channel ', doc.channel , ' With Id ', channelId);
+
+      }
       return Subscribers.insert({ owner: this.userId, ...doc });
     } catch (exception) {
+      console.log(exception);
       handleMethodException(exception);
     }
   },
@@ -21,6 +38,8 @@ Meteor.methods({
       _id: String,
       phone: String,
       email: String,
+      username: String,
+      channel: String,
     });
 
     try {

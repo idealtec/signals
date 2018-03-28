@@ -1,21 +1,21 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-const Subscribers = new Mongo.Collection('Subscribers');
+const Channels = new Mongo.Collection('Channels');
 
-Subscribers.allow({
+Channels.allow({
   insert: () => false,
   update: () => false,
   remove: () => false,
 });
 
-Subscribers.deny({
+Channels.deny({
   insert: () => true,
   update: () => true,
   remove: () => true,
 });
 
-Subscribers.schema = new SimpleSchema({
+Channels.schema = new SimpleSchema({
   owner: {
     type: String,
     label: 'The ID of the user this document belongs to.',
@@ -34,24 +34,16 @@ Subscribers.schema = new SimpleSchema({
       if (this.isInsert || this.isUpdate) return (new Date()).toISOString();
     },
   },
-  phone: {
+  name: {
     type: String,
-    label: 'The phone number of the subsriber.',
+    label: 'Channel name.',
   },
-  email: {
+  description: {
     type: String,
-    label: 'Subscribers Email.',
-  },
-  username: {
-    type: String,
-    label: 'The username of the subsriber.',
-  },
-  channel: {
-    type: String,
-    label: 'Subscribers channel.',
+    label: 'Channel description.',
   },
 });
 
-Subscribers.attachSchema(Subscribers.schema);
+Channels.attachSchema(Channels.schema);
 
-export default Subscribers;
+export default Channels;
