@@ -7,7 +7,7 @@ Template.chart.onRendered(function() {
   this.autorun(() => {
   var chart = new Chart(ctx, {
     // The type of chart we want to create
-    type: "line",
+    type: "bar",
 
     // The data for our dataset
     data: {
@@ -17,7 +17,8 @@ Template.chart.onRendered(function() {
           label: "Number of Broadcasts",
         //   backgroundColor: "rgb(85, 199, 132)",
           borderColor: "rgb(1, 99, 132)",
-          data: [0, 10, 5, 2, 20, 30, 45]
+          data: [0, 10, 5, 2, 20, 30, 45],
+          type: 'line',
         },
         {
             label: 'Number of comments',
@@ -26,6 +27,14 @@ Template.chart.onRendered(function() {
             borderColor: "rgb(255, 199, 232)",
             type: 'line'
           },
+          {
+            label: "Reads",
+            type: "bar",
+            backgroundColor: "rgba(0,90,20,0.2)",
+            backgroundColorHover: "#3e95cd",
+            data: [133,221,83,278]
+          },
+          
 
       ]
     },
