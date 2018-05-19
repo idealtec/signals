@@ -48,6 +48,8 @@ Meteor.methods({
 
         if (userNameExists) {
           console.log("User Exists");
+          return new Meteor.Error('Duplicate', "User already exists !");
+
         } else {
           return Subscribers.insert({ owner: this.userId, ...doc });
         }
