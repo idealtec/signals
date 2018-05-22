@@ -3,42 +3,48 @@
 
     <form id='#addSubscriber' action="">
 
-        <div class="field">
-          <div class="control">
-            <input type='text' class="input is-warning is-rounded" id='subscriber_username' placeholder="Choose Username">
-          </div>
+      <div class="field">
+        <div class="control">
+          <input type='text' class="input is-warning is-rounded" id='subscriber_username' placeholder="Choose Username">
         </div>
+      </div>
 
-        <div class="field">
-          <div class="control">
-            <input type='tel' class="input is-warning is-rounded" id='subscriber_phone' placeholder="Mobile">
-          </div>
+      <div class="field">
+        <div class="control">
+          <input type='tel' class="input is-warning is-rounded" id='subscriber_phone' placeholder="Mobile">
         </div>
-        <div class="field">
-          <div class="control">
-            <input type='email' class="input is-warning is-rounded" id='subscriber_email' placeholder="Email">
-          </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input type='email' class="input is-warning is-rounded" id='subscriber_email' placeholder="Email">
         </div>
-        <div class="field">
-          <div class="control">
-            <!-- <input type='text' class="input is-warning is-rounded" id='subscriber_channel' placeholder="Channel"> -->
-            <div class="select  is-rounded is-warning is-fullwidth" id='subscriber_channel' placeholder="Channel">
-                <select >
-                <!-- <select multiple size="8"> -->
-                  <option value="All">Select Channel</option>
+      </div>
+      <div class="field">
+        <div class="control">
+          <!-- <input type='text' class="input is-warning is-rounded" id='subscriber_channel' placeholder="Channel"> -->
+          <div class="select  is-rounded is-warning is-fullwidth" id='subscriber_channel' placeholder="Channel">
+            <select>
+              <!-- <select multiple size="8"> -->
+              <option value="CX" selected hidden>Select Channel</option>
+              {{#if channels.length}}
                   {{#each channels}}
-                  <option value="{{description}}">{{name}}</option>
-                  {{/each}}
-                </select>
-              </div>
+                    <option value="{{description}}">{{name}}</option>
+                  {{/each}} 
+              {{else}}
+              <option value="FX">Fx</option>
+              <option value="CX">Cx</option>
+              <option value="DX">Dx</option>
+              {{/if}}
+            </select>
           </div>
         </div>
+      </div>
 
-        <div class="control add-subscriber">
-          <a class="button is-warning is-rounded is-fullwidth" type="submit">
-            Register Subscriber
-          </a>
-        </div>
+      <div class="control add-subscriber">
+        <a class="button is-warning is-rounded is-fullwidth" type="submit">
+          Register Subscriber
+        </a>
+      </div>
     </form>
   </div>
 

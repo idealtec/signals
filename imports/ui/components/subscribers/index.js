@@ -40,7 +40,7 @@ Template.subscribers.events({
       } else {
         Bert.alert(
           "Removed subscriber " + this.email,
-          "danger",
+          "info",
           "growl-bottom-right",
           "fa-remove"
         );
@@ -73,18 +73,27 @@ Template.subscriber_add.events({
         if (error) {
           alert(error);
         } else {
+          if(!result.error){
             $("#subscriber_phone").val("");
             $("#subscriber_email").val("");
             $("#subscriber_username").val("");
             $("#subscriber_channel").val("");
-          console.log("result:", result);
+          }else{
+            console.log("result:", result);
+            Bert.alert(
+              result.reason,
+              'warning',
+              "growl-top-right",
+              "fa-exclamation-circle"
+            );
+          }
         }
       });
     } else {
       console.log("Invalid Email/phone", subscriber_email);
       Bert.alert(
         "Invalid Email or Phone. Please check",
-        "danger",
+        "warning",
         "growl-top-right",
         "fa-exclamation-triangle"
       );
